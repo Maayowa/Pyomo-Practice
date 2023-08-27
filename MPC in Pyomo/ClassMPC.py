@@ -3,7 +3,8 @@ import numpy as np
 
 class SampleMPC:
     """
-    For more description of the problem, see the instructional material in folder
+    For more description of the problem, see //pages 12-15 of// the instructional material in folder.
+    Quick shoutout to Saskia Putri for putting the material together!
     """
 
     def __init__(self, Np=10, k_q=1, k_r=0.1):
