@@ -3,8 +3,7 @@ import numpy as np
 
 class SampleMPC:
     """
-    For more description of the problem, see //pages 12-15 of// the instructional material in folder.
-    Quick shoutout to Saskia Putri for putting the material together!
+    For more description of the problem, see the instructional material in folder
     """
 
     def __init__(self, Np=10, k_q=1, k_r=0.1):
@@ -28,7 +27,7 @@ class SampleMPC:
         self.Q = k_q * np.eye(self.Np)
         self.R = k_r * np.eye(self.Np)
 
-    def mpc_lti_system(self, k_q=1, k_r=0.1):
+    def init_augmented_matrix(self, k_q=1, k_r=0.1):
         # Computed Penalty Weights Parameters
         R = k_r * np.eye(self.Np)
         Q = k_q * np.eye(self.Np)
@@ -86,7 +85,7 @@ class SampleMPC:
             n = n + 1
         return Z
 
-    def system_matrix(self, uk=None, xa=None, xo=None):
+    def init_system_matrix(self, uk=None, xa=None, xo=None):
         """Returns final A and B matrix for optimization model"""
         # Optimization problem
         if uk is None:
